@@ -1,16 +1,85 @@
-<html>
-    <h1>
-        Hey, its the start of the Belmont Circle site.
-    </h1>
-    <body>
-        <h2>About me</h2>
-        <p>
-            I'm starting down the Home Lab path to IT greatness.
-        </p>
-        <h2> What I'm working on</h2>
-        <p>
-            I'm standing up a website of course! I'm also working on building out the home network.
-        </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Home Lab & Networking Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
 
-</html>    
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo">HomeLab Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#about">About Me</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Welcome to My Home Lab</h1>
+            <p>Documenting my journey in networking, IT infrastructure, automation, and self-hosted services.</p>
+            <a href="#projects" class="cta-btn">View My Projects</a>
+        </div>
+    </header>
+
+    <section id="projects" class="section">
+        <h2>Home Lab Projects</h2>
+        <div class="cards">
+
+            <div class="card">
+                <h3>🏠 Home Network Architecture</h3>
+                <p>Designed a segmented home network using VLANs, firewall rules, and a managed switch.</p>
+                <a href="#" class="more-btn">Read More</a>
+            </div>
+
+            <div class="card">
+                <h3>🖥️ Proxmox Virtualization Cluster</h3>
+                <p>Built a Proxmox cluster running VMs and LXC containers for testing, automation, and services.</p>
+                <a href="#" class="more-btn">Read More</a>
+            </div>
+
+            <div class="card">
+                <h3>🔐 Self-Hosted Services</h3>
+                <p>Reverse-proxy setup, monitoring stack (Prometheus/Grafana), Docker apps, and more.</p>
+                <a href="#" class="more-btn">Read More</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="stack" class="section dark">
+        <h2>Tech Stack</h2>
+        <div class="stack-list">
+            <span>Proxmox</span>
+            <span>Docker</span>
+            <span>Linux</span>
+            <span>pfSense / OPNsense</span>
+            <span>GitHub Actions</span>
+            <span>Python</span>
+            <span>Ansible</span>
+            <span>IPv6 / VLANs / DHCP / DNS</span>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            I'm an IT and networking enthusiast continually exploring infrastructure, automation, 
+            and home lab technologies. This website documents my hands-on experience building 
+            real-world systems including network segmentation, virtualization, monitoring,
+            containerization, and server administration.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2025 My Home Lab Portfolio — Hosted on GitHub Pages</p>
+    </footer>
+</body>
+</html>
+
