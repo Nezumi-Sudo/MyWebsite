@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Topology</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="subpage-header">
+    <h1>Network Topology</h1>
+</header>
+
+<main class="doc-content">
+    <h2>Overview</h2>
+    <p>
+        My home network is designed with multiple VLANs, a dedicated firewall,
+        a managed switch, and segmented services to emulate enterprise-style architecture.
+    </p>
+
+    <h2>Key Components</h2>
+    <ul>
+        <li>pfSense/OPNsense firewall</li>
+        <li>Layer-3 managed switch</li>
+        <li>VLAN segmentation (Servers, IoT, Guest, Management)</li>
+        <li>DNS & DHCP infrastructure</li>
+        <li>Site-to-site and remote access VPN</li>
+    </ul>
+
+    <h2>Goals</h2>
+    <p>
+        Security, scalability, and replicating real production networks.
+    </p>
+</main>
+
+</body>
+</html>
