@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker & Self-Hosted Services</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="subpage-header">
+    <h1>Docker & Self-Hosted Services</h1>
+</header>
+
+<main class="doc-content">
+    <h2>Overview</h2>
+    <p>
+        I use Docker to manage lightweight services ranging from dashboards to
+        monitoring and internal web apps.
+    </p>
+
+    <h2>Core Services</h2>
+    <ul>
+        <li>Traefik or Nginx Proxy Manager</li>
+        <li>Portainer</li>
+        <li>Grafana + Prometheus</li>
+        <li>Uptime Kuma</li>
+        <li>Internal dashboards</li>
+    </ul>
+
+    <h2>Goals</h2>
+    <p>
+        Build reliable, self-hosted alternatives to cloud SaaS and document deployment strategies.
+    </p>
+</main>
+
+</body>
+</html>
