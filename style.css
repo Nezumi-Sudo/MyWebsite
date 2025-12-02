@@ -118,3 +118,48 @@ footer {
     background: #0d1b2a;
     color: #fff;
 }
+
+/* ===== Documentation Pages ===== */
+.subpage-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #1b263b;
+    color: #e0e1dd;
+}
+
+.doc-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.doc-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: #222;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.doc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.doc-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.doc-content h2 {
+    margin-top: 40px;
+}
