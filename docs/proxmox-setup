@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proxmox Cluster Setup</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="subpage-header">
+    <h1>Proxmox Cluster Setup</h1>
+</header>
+
+<main class="doc-content">
+    <h2>Cluster Design</h2>
+    <p>
+        I built a Proxmox cluster to run virtual machines and containers for home lab experiments,
+        automation testing, and self-hosted applications.
+    </p>
+
+    <h2>Components</h2>
+    <ul>
+        <li>2–3 Proxmox nodes</li>
+        <li>ZFS or NFS shared storage</li>
+        <li>Backups via Proxmox Backup Server (PBS)</li>
+        <li>LXC and VM workloads</li>
+    </ul>
+
+    <h2>Use Cases</h2>
+    <p>
+        Running DNS servers, monitoring stack, reverse proxy, internal dev tools,
+        and various Linux servers.
+    </p>
+</main>
+
+</body>
+</html>
