@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jellyfin on TrueNAS | Home Lab Docs</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Mermaid.js for diagrams -->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+    </script>
+</head>
+
+<body>
+
+<header class="subpage-header">
+    <h1>Deploying a Jellyfin Server on TrueNAS</h1>
+</header>
+
+<main class="doc-content">
+
+    <h2>Overview</h2>
+    <p>
+        Jellyfin is a free and open-source media server used to organize and stream your personal movies, 
+        TV shows, and music libraries. TrueNAS provides a strong foundation for running Jellyfin thanks 
+        to its powerful ZFS storage backend and built-in application management through Apps (TrueNAS SCALE).
+        This guide walks through deploying Jellyfin on TrueNAS SCALE with persistent storage, GPU support,
+        and proper media library organization.
+    </p>
+
+    <h2>System Architecture</h2>
+    <div class="diagram">
+```mermaid
+graph TD
+    A[Media Clients<br>TVs, Phones, Browsers] -->|Stream| B(Jellyfin Server)
+    B -->|Reads Media| C[Media Dataset<br>/mnt/tank/media]
+    B -->|Stores Config| D[App Config Dataset<br>/mnt/tank/apps/jellyfin/config]
+    B -->|Optional| E[GPU Acceleration<br>NVIDIA / Intel]
+    C --> TrueNAS
+    D --> TrueNAS
+<h2>Step 5 — Enable GPU Hardware Acceleration (Optional)</h2>
+<p>
+    If your system supports GPU acceleration (especially NVIDIA), TrueNAS SCALE allows you to pass 
+    the GPU directly into the container.
+</p>
+
+<ol>
+    <li>Go to <strong>Apps → Jellyfin → Edit</strong></li>
+    <li>Scroll to <strong>Resources</strong></li>
+    <li>Select your GPU</li>
+</ol>
+
+<p>Then enable hardware acceleration inside Jellyfin:</p>
+<ul>
+    <li>Go to <strong>Dashboard → Playback → Transcoding</strong></li>
+    <li>Enable NVENC / NVDEC (NVIDIA), or QuickSync (Intel)</li>
+</ul>
+
+<h2>Step 6 — Finish Deployment</h2>
+<p>
+    Click <strong>Install</strong> and TrueNAS will deploy Jellyfin automatically. 
+    Once complete, access it via a browser.
+</p>
+
+<h2>Jellyfin Setup Wizard</h2>
+<p>When you first open Jellyfin:</p>
+
+<ol>
+    <li>Create an admin account</li>
+    <li>Choose a language</li>
+    <li>Add media libraries:
+        <ul>
+            <li>Movies → /data/movies</li>
+            <li>Shows → /data/shows</li>
+            <li>Music → /data/music</li>
+        </ul>
+    </li>
+    <li>Select metadata options</li>
+</ol>
+
+<h2>Remote Access</h2>
+<p>For remote streaming, consider:</p>
+
+<ul>
+    <li>Cloudflare Tunnel (recommended)</li>
+    <li>Traefik / Nginx Proxy Manager</li>
+    <li>VPN access (WireGuard / OpenVPN)</li>
+</ul>
+
+<p><strong>Avoid exposing Jellyfin directly to the internet without SSL and proper security controls.</strong></p>
+
+<h2>Backups</h2>
+<p>Use Snapshot Tasks in TrueNAS to back up:</p>
+
+<ul>
+    <li>The Jellyfin config dataset</li>
+    <li>Your media datasets</li>
+</ul>
+
+<p>
+    Periodic snapshots allow you to quickly roll back accidental deletions or metadata corruption.
+</p>
+
+<h2>Conclusion</h2>
+<p>
+    Running Jellyfin on TrueNAS gives you a powerful, flexible, and secure self-hosted media platform. 
+    With ZFS-backed storage, easy application deployment, and GPU acceleration, this setup provides 
+    a solid foundation for home media streaming in any home lab environment.
+</p>
